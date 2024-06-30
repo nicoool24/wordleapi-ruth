@@ -1,13 +1,14 @@
 const API = "https://pokeapi.co/api/v2/pokemon/"
+
 //API
-//numero aleatorio entre 0 y 5
+
 let palabraSecreta =""
     fetch(API)
       .then((response) => response.json())
       .then((data) => {
         const nombresPokemon = data.results.map((pokemon) => pokemon.name);
         const randomIndex = Math.floor(Math.random() * nombresPokemon.length);
-        const palabraSecreta = nombresPokemon[randomIndex].toUpperCase();
+        palabraSecreta = nombresPokemon[randomIndex].toUpperCase();
         console.log(palabraSecreta);
       })
       .catch((error) => {
@@ -24,10 +25,16 @@ let grid = document.getElementById("grid")
 button.addEventListener("click",enter)
 
 function enter(){
-
     let intento = input.value.toUpperCase() 
+        if(intento.length != palabraSecreta.length){
+            alert("la palabra debe contenter" + palabraSecreta.length +"letras");
+            enter();
+        }
+            
+    
+        }
     console.log(intento)
-    if (intento == palabraSecreta){
+    if (intento ==palabraSecreta){
         gameOver("Ganaste")
         confetti();
     }
@@ -51,7 +58,7 @@ function enter(){
     if (oportunidades == 0){
         gameOver("Perdiste")
     }
-}
+
 
 
 function gameOver(mensaje){
