@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #bde0fe;
+  background-image: url("https://wallpapers-clan.com/wp-content/uploads/2024/03/pokemon-bulbasaur-landscape-desktop-wallpaper-preview.jpg");
 }
    
 h1 {
@@ -38,7 +39,7 @@ button:active {
     margin: 3px;
     min-width: 20px;
     text-align: center;
-    display: inline-blocks
+    
 }
    
 .row{
